@@ -15,4 +15,6 @@
 
 # What are Containers
 
+- Containers are completely isolated environments, as they can have their own processes or services, their own network interfaces, their own mounts, just like virtual machine except they all share the same OS kernel.
+
 # What is Docker
