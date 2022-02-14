@@ -18,3 +18,60 @@
 - Containers are completely isolated environments, as they can have their own processes or services, their own network interfaces, their own mounts, just like virtual machine except they all share the same OS kernel.
 
 # What is Docker
+
+# Installing Docker on Linux (Convenience script)
+
+- https://docs.docker.com/engine/install/ubuntu/
+- Confirming version of ubuntu linux distro ex. bionic, focal.
+
+```
+cat /etc/*release*
+```
+
+<img src="./Linux Focal Distro.png" alt="Linux Focal Distro">
+- Uninstall older docker version if one exist.
+```
+ sudo apt-get remove docker docker-engine docker.io containerd runc
+```
+
+- Install with convevience script
+
+```
+ curl -fsSL https://get.docker.com -o get-docker.sh
+ sudo sh get-docker.sh
+```
+
+- Checking the docker version after the installation finish
+
+```
+sudo docker version
+```
+
+# Testing the Docker
+
+- Find an image from dockerhub https://hub.docker.com/
+- Using popular image to test whalesay
+
+```
+docker run docker/whalesay cowsay Hello-World
+```
+
+### docker run nginx -> running a container from an image. If image doesn't exist locally in the docker host, it will pull from dockerhub.
+
+### docker ps -> list all running containers and shows some basic information about them eg. containerId, status.
+
+### docker ps -s -> listing all running and stop containers.
+
+### docker stop [id@name] -> used to stop a running container, need to provide container id or name of that container
+
+### docker rm [id@name] -> used to remove a stopped or exited container permanently
+
+### docker images -> used to see all images on docker host
+
+### docker rmi [image] -> delete an image in docker host. Ensure that no containers off that image before attempting to remove
+
+### docker pull [image] -> pull image and store in docker host
+
+### docker run ubuntu sleep 100 -> instruct docker to run a process eg. sleep ubuntu for 100 seconds
+
+### docker exec [containername] cat /etc/hosts -> used to execute a command on running docker container. In this case, to print the content of `/etc/hosts` file
