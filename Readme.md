@@ -75,3 +75,7 @@ docker run docker/whalesay cowsay Hello-World
 ### docker run ubuntu sleep 100 -> instruct docker to run a process eg. sleep ubuntu for 100 seconds
 
 ### docker exec [containername] cat /etc/hosts -> used to execute a command on running docker container. In this case, to print the content of `/etc/hosts` file
+
+### docker inspect [containername]
+
+### docker logs [containername]
