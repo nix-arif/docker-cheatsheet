@@ -79,3 +79,7 @@ docker run docker/whalesay cowsay Hello-World
 ### docker inspect [containername]
 
 ### docker logs [containername]
+
+### docker run -e APP_COLOR=blue simple-webapp-color -> environment variable
+
+### docker inpect [containername] -> search under Config -> Env -> Searching for environment variable
